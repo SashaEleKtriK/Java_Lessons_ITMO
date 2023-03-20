@@ -10,7 +10,7 @@ public class Strings {
         System.out.println(palindromeWord(testStr1));
         System.out.println(palindromeWord(testStr2));
         System.out.println(palindromeWord(testStr3));
-        System.out.println(censored(testStr4));
+        System.out.println(censored(testStr4, "бяка", "[вырезано цензурой]"));
         System.out.println(countMatches(testStr4, "бяка"));
         System.out.println(countMatches("AAAABBBBAAACCAACDDD", "AA"));
         System.out.println(reverse(testStr1));
@@ -53,8 +53,8 @@ public class Strings {
         }
         return isPalindrome;
     }
-    public static String censored(String urString){
-        String censored = urString.replaceAll("бяка", "[вырезано цензурой]");
+    public static String censored(String urString, String wrongWord, String censoreString){
+        String censored = urString.replaceAll(wrongWord, censoreString);
         return censored;
     }
     public static Integer countMatches(String text, String subStr){
